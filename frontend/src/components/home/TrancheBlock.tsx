@@ -79,21 +79,19 @@ function jobToCardProps(job: Job): TrancheCardProps {
 function getStatusConfig(status: string) {
   switch (status) {
     case 'SETTLED':
-      return { color: 'text-primary', icon: CheckCircle2, label: 'Resolved', rail: 'bg-primary', glow: 'shadow-primary/20', isPulse: false }
+      return { color: 'text-primary', icon: CheckCircle2, label: 'Resolved', rail: 'bg-primary' };
     case 'EXECUTING':
-    case 'GRADING':
-      return { color: 'text-primary', icon: Zap, label: status === 'GRADING' ? 'Grading' : 'Executing', rail: 'bg-primary animate-flow-trace', glow: 'shadow-primary/30', isPulse: true }
+      return { color: 'text-primary', icon: Zap, label: status === 'GRADING' ? 'Grading' : 'Executing', rail: 'bg-primary' };
     case 'FAILED':
     case 'REJECTED':
-      return { color: 'text-destructive', icon: AlertCircle, label: status === 'REJECTED' ? 'Rejected' : 'Failed', rail: 'bg-destructive', glow: '', isPulse: false }
-    case 'REFUNDED':
+      return { color: 'text-destructive', icon: AlertCircle, label: status === 'REJECTED' ? 'Rejected' : 'Failed', rail: 'bg-destructive' };
     case 'EXPIRED':
-      return { color: 'text-muted-foreground', icon: RotateCcw, label: status === 'EXPIRED' ? 'Expired' : 'Refunded', rail: 'bg-border', glow: '', isPulse: false }
+      return { color: 'text-muted-foreground', icon: RotateCcw, label: status === 'EXPIRED' ? 'Expired' : 'Expired', rail: 'bg-muted-foreground' };
     case 'ISSUED':
-      return { color: 'text-secondary', icon: Clock, label: 'Issued', rail: 'bg-secondary', glow: 'shadow-secondary/20', isPulse: false }
+      return { color: 'text-secondary', icon: Clock, label: 'Issued', rail: 'bg-secondary' };
     case 'QUEUED':
     default:
-      return { color: 'text-secondary', icon: Clock, label: 'Queued', rail: 'bg-secondary', glow: 'shadow-secondary/20', isPulse: false }
+      return { color: 'text-secondary', icon: Clock, label: 'In Queue', rail: 'bg-secondary' };
   }
 }
 
